@@ -19,31 +19,31 @@ $matches = [
         'casa' => 'Maverick',
         'trasferta' => 'Huston',
         'puntiCasa' => 108,
-        'puntitrasferta' => 112
+        'puntiTrasferta' => 112
     ],
     [
-        'casa' => 'Maverick',
-        'trasferta' => 'Huston',
+        'casa' => 'Heats',
+        'trasferta' => 'Boston',
         'puntiCasa' => 97,
-        'puntitrasferta' => 99
+        'puntiTrasferta' => 99
     ],
     [
         'casa' => 'Clippers',
         'trasferta' => 'San Antonio',
         'puntiCasa' => 103,
-        'puntitrasferta' => 125
+        'puntiTrasferta' => 125
     ],
     [
         'casa' => 'Bucks',
         'trasferta' => 'Brooklyn',
         'puntiCasa' => 76,
-        'puntitrasferta' => 102
+        'puntiTrasferta' => 102
     ],
     [
         'casa' => 'Pistons',
         'trasferta' => 'Sacramento',
         'puntiCasa' => 97,
-        'puntitrasferta' => 92
+        'puntiTrasferta' => 92
     ],
 ];
 
@@ -51,9 +51,21 @@ $matches = [
 ?>
 
 <h2>Partite di ieri</h2>
+
+<?php if(count($matches) > 0) { ?>
 <ul>
-  <li><?php       ?></li>
+<?php for($i = 0; $i < count($matches); $i++) { ?>
+    <?php $thisMatch = $matches[$i]; ?>
+
+    <li>
+       <h3>
+            <?php echo $thisMatch['casa']; ?> - <?php echo $thisMatch['trasferta']; ?> 
+            <?php echo $thisMatch['puntiCasa']; ?> - <?php echo $thisMatch['puntiTrasferta']; ?>
+       </h3>
+   </li>
+   <?php } ?>   
 </ul>
+<?php } ?>  
 
  </body>
  </html>
